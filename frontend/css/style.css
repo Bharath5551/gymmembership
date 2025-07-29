@@ -44,15 +44,20 @@ nav a {
 }
 
 .hero {
-  background: url('../images/gymimag.jpg') center/cover no-repeat;
-  /* if your CSS located in css/ folder: use ../images/filename */
-  background-color: red;
-  height: 80vh;
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
+  color: white;
+  text-align: center;
+  padding: 0 2rem;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 .hero::before {
   content: "";
