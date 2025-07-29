@@ -1,0 +1,9 @@
+const express = require('express');
+const router = express.Router();
+
+// Dummy route for user profile (update later)
+router.get('/profile', (req, res) => {
+  res.json({ message: "User profile route working!" });
+});
+
+module.exports = router;
