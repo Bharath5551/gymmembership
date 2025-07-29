@@ -44,7 +44,7 @@ nav a {
 }
 
 .hero {
-  background: url('https://images.unsplash.com/photo-1558611848-73f7eb4001e4?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  background: url('frontend/gymimag.jpg') center/cover no-repeat;
   height: 80vh;
   display: flex;
   align-items: center;
