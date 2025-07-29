@@ -45,11 +45,13 @@ nav a {
 
 .hero {
   background: url('frontend/gymimag.jpg') center/cover no-repeat;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
+
 
 .hero-content {
   width: 100%;
