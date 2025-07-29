@@ -38,9 +38,9 @@ nav ul {
 }
 
 nav a {
-  pointer-events: auto;
-  z-index: 10;
-  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 }
