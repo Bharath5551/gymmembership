@@ -86,10 +86,11 @@ html {
 .hero .btn {
   padding: 10px 20px;
   font-size: 1rem;
+  background: #d62828;
 }
 
 .btn:hover {
-  background: #d62828;
+  background: #e6b800;
 }
 
 .features {
