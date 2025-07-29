@@ -38,10 +38,11 @@ nav ul {
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+  pointer-events: auto;
+  z-index: 10;
+  position: relative;
 }
+
 
 .hero {
   background: url('../images/gymimag.jpg') no-repeat center center fixed;
