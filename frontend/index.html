@@ -5,27 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PowerZone Gym</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>PowerZone Gym</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Nutrition</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
   <header class="hero">
-    <nav class="navbar">
-      <h1>PowerZone Gym</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diet.html">Nutrition</a></li>
-        <li><a href="workout.html">Workout</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-    <div class="hero-text">
+    <div class="overlay"></div>
+    <div class="hero-content">
       <h2>Transform Your Body, Transform Your Life</h2>
       <p>Join PowerZone today and unlock your fitness potential</p>
-      <a href="login.html" class="btn">Join Now</a>
+      <a href="#plans" class="btn-red">View Plans</a>
     </div>
   </header>
 
-  <footer>
-    <p>📍 PowerZone Gym, Haveri | 📞 +91-XXXXXXXXXX</p>
-  </footer>
+  <!-- Features -->
+  <section class="features">
+    <h3>Why Choose PowerZone?</h3>
+    <div class="feature-cards">
+      <div class="card">💪 Certified Trainers</div>
+      <div class="card">🕐 Open 5AM – 11PM</div>
+      <div class="card">🧘 Personal Coaching</div>
+      <div class="card">🧼 Clean Facilities</div>
+    </div>
+  </section>
+
+  <!-- Membership Plans -->
+  <section class="plans" id="plans">
+    <h3>Membership Plans</h3>
+    <div class="plan-cards">
+      <div class="plan-card">
+        <h4>Monthly</h4>
+        <p>₹500 / month</p>
+      </div>
+      <div class="plan-card">
+        <h4>Quarterly</h4>
+        <p>₹1500 / 3 months</p>
+      </div>
+      <div class="plan-card">
+        <h4>Yearly</h4>
+        <p>₹6,000 / year</p>
+      </div>
+    </div>
+    <a href="login.html" class="btn-red">Buy Now</a>
+  </section>
 </body>
 </html>
