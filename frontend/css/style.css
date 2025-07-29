@@ -44,7 +44,7 @@ nav a {
 }
 
 .hero {
-  background: url('../images/background.jpg') no-repeat center center fixed;
+  background: url('../images/gymimag.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
