@@ -52,7 +52,7 @@ nav a {
   justify-content: center;
   color: white;
   text-align: center;
-  padding: 0 2rem;
+  padding: 0 0rem;
 }
 html {
   scroll-behavior: smooth;
@@ -69,24 +69,28 @@ html {
 
 .hero-content {
   color: #fff;
-  text-align: center;
-  z-index: 2;
+  text-align: top;
+  z-index: 0;
 }
 
 .hero h2 {
   font-size: 4rem;
-  margin-bottom: 12rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
 }
 
 .hero p {
   font-size: 2.5rem;
-  margin-bottom: 14rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
 }
 
 .hero .btn {
   padding: 10px 20px;
   font-size: 1rem;
   background: #d62828;
+  margin-top: 2rem; 
+  margin-bottom: 9rem;
 }
 
 .btn:hover {
@@ -144,4 +148,4 @@ html {
 
 .card p {
   font-size: 18px;
-}
+}S
