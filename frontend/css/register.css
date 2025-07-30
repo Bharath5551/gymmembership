@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #111, #1a1a1a);
+  background: radial-gradient(circle, #0f0f0f, #000000);
   color: #fff;
   height: 100vh;
   display: flex;
@@ -13,10 +13,10 @@ body {
 }
 
 .register-container {
-  background-color: #1c1c1c;
+  background-color: #111;
   padding: 40px 30px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(230, 0, 35, 0.2);
+  box-shadow: 0 0 20px rgba(230, 0, 35, 0.25);
   width: 90%;
   max-width: 400px;
   text-align: center;
@@ -24,28 +24,28 @@ body {
 
 .register-container h2 {
   margin-bottom: 20px;
-  font-size: 28px;
+  font-size: 26px;
   color: #e60023;
-}
-
-.register-container h2 span {
-  color: #fff;
 }
 
 .register-container form input {
   width: 100%;
   padding: 12px 14px;
   margin: 10px 0;
-  border: 1px solid #333;
+  border: none;
   border-radius: 6px;
-  background-color: #2a2a2a;
-  color: #fff;
-  font-size: 16px;
+  background-color: #2b2b2b;
+  color: white;
+  font-size: 15px;
+}
+
+.register-container form input::placeholder {
+  color: #aaa;
 }
 
 .register-container form input:focus {
   outline: none;
-  border-color: #e60023;
+  border: 1px solid #e60023;
 }
 
 .register-container button {
@@ -55,7 +55,7 @@ body {
   background-color: #e60023;
   border: none;
   border-radius: 6px;
-  color: #fff;
+  color: white;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
