@@ -9,65 +9,78 @@
       font-family: Arial, sans-serif;
       margin: 0;
       background: url('dietphoto.jpg') no-repeat center center fixed;
+      background-size: cover;
       background-color: black;
-      color: black;
+      color: white;
       padding: 20px;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 500px;
       margin: auto;
-      background: rgb(25, 11, 5)
+      background-color:black;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
     }
 
     h1 {
       text-align: center;
       color: #ff2625;
+      margin-bottom: 25px;
     }
 
     label {
       display: block;
-      margin: 15px 0 5px;
+      margin: 10px 0 5px;
       font-weight: bold;
     }
 
     input, select {
       width: 100%;
-      padding: 10px;
-      border: 1px solid rgb(0, 29, 33);
-      border-radius: 5px;
+      padding: 12px;
+      border: 1px solid #003032;
+      border-radius: 6px;
       font-size: 16px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
     }
 
     button {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       background-color: #ff2625;
       border: none;
       color: white;
       font-weight: bold;
       font-size: 16px;
-      border-radius: 5px;
-      margin-top: 20px;
+      border-radius: 6px;
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #cc1d1a;
     }
 
     .result {
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 15px;
-      background: #e7f3e7;
-      border-left: 4px solid #28a745;
-      border-radius: 5px;
+      background: #ffffffdd;
+      color: black;
+      border-left: 5px solid #28a745;
+      border-radius: 8px;
+    }
+
+    .result h3, .result h4 {
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Calories & Macronutrient Calculator</h1>
+    <h1>Calories Calculator</h1>
 
     <label for="name">Name:</label>
     <input type="text" id="name" placeholder="Enter your name" required>
@@ -126,7 +139,7 @@
         return;
       }
 
-      // BMR Calculation using Mifflin-St Jeor Formula
+      // BMR Calculation (Mifflin-St Jeor)
       let bmr;
       if (gender === "male") {
         bmr = 10 * weight + 6.25 * height - 5 * age + 5;
@@ -165,7 +178,7 @@
           <li><strong>Carbohydrates:</strong> ${Math.round(carbs)}g</li>
           <li><strong>Fats:</strong> ${Math.round(fat)}g</li>
         </ul>
-        <p>This is based on your goal: <strong>${goal}</strong></p>
+        <p>Goal: <strong>${goal}</strong></p>
         <p>Stay consistent and train smart 💪</p>
       `;
     }
