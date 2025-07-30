@@ -1,26 +1,30 @@
-document.getElementById("registerForm").addEventListener("submit", async (e) => {
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const fullname = document.getElementById('fullname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
 
   try {
-    const res = await fetch("https://gymmembership-1n9g.onrender.com/api/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password })
+    const response = await fetch('https://gymmembership-1n9g.onrender.com/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ fullname, email, password })
     });
 
-    const data = await res.json();
+    const data = await response.json();
 
-    if (res.ok) {
-      alert("✅ Registration successful! Redirecting to login...");
-      window.location.href = "login.html";
+    if (response.ok) {
+      alert('✅ Registered successfully!');
+      // Optionally redirect:
+      window.location.href = '/login.html';
     } else {
-      alert("❌ Registration failed: " + data.message);
+      alert(`❌ Error: ${data.message || 'Something went wrong'}`);
     }
   } catch (err) {
-    alert("❌ Error: " + err.message);
+    console.error(err);
+    alert('❌ Failed to connect to server');
   }
 });
