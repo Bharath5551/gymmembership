@@ -1,27 +1,28 @@
-document.getElementById("loginForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+const express = require('express');
+const router = express.Router();
+const User = require('../models/User');
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
+router.post('/register', async (req, res) => {
   try {
-    const res = await fetch("https://gymmembership-1n9g.onrender.com/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
-    });
+    const { fullname, email, password } = req.body;
 
-    const data = await res.json();
-
-    if (res.ok) {
-      alert("✅ Login successful!");
-      // Redirect or store token
-      // localStorage.setItem("token", data.token);
-      // window.location.href = "dashboard.html";
-    } else {
-      alert("❌ Login failed: " + data.message);
+    if (!fullname || !email || !password) {
+      return res.status(400).json({ message: "All fields are required" });
     }
-  } catch (err) {
-    alert("❌ Error: " + err.message);
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(409).json({ message: "User already exists" });
+    }
+
+    const newUser = new User({ fullname, email, password });
+    await newUser.save();
+
+    res.status(201).json({ message: "User registered successfully" });
+  } catch (error) {
+    console.error("❌ Error in /register:", error);
+    res.status(500).json({ message: "Server error" });
   }
 });
+
+module.exports = router;
