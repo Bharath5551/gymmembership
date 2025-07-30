@@ -1,10 +1,7 @@
-document.getElementById('loginForm').addEventListener('submit', async function(e) {
-  e.preventDefault(); // Prevents form from refreshing the page
-
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  const response = await fetch('https://your-backend-url.com/login', {
+  const response = await fetch('https://gymmembership-1n9g.onrender.com/api/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
