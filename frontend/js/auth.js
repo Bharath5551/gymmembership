@@ -1,28 +1,20 @@
-const express = require('express');
-const router = express.Router();
-const User = require('../models/User');
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+  e.preventDefault(); // Prevents form from refreshing the page
 
-router.post('/register', async (req, res) => {
-  try {
-    const { fullname, email, password } = req.body;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-    if (!fullname || !email || !password) {
-      return res.status(400).json({ message: "All fields are required" });
-    }
+  const response = await fetch('https://your-backend-url.com/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+  });
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(409).json({ message: "User already exists" });
-    }
-
-    const newUser = new User({ fullname, email, password });
-    await newUser.save();
-
-    res.status(201).json({ message: "User registered successfully" });
-  } catch (error) {
-    console.error("❌ Error in /register:", error);
-    res.status(500).json({ message: "Server error" });
+  const data = await response.json();
+  if (response.ok) {
+    // Redirect on success
+    window.location.href = 'home.html'; // change to your actual homepage
+  } else {
+    alert(data.message || 'Login failed');
   }
 });
-
-module.exports = router;
