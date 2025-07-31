@@ -17,12 +17,11 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     if (response.ok) {
       messageDiv.style.color = 'green';
       messageDiv.textContent = "Login successful! Redirecting...";
-
       localStorage.setItem('token', data.token);
 
       setTimeout(() => {
         window.location.href = 'home.html';
-      }, 100); // Delay for message to show
+      }, 1000);
     } else {
       messageDiv.style.color = 'red';
       messageDiv.textContent = data.message || "Login failed";
@@ -30,6 +29,6 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   } catch (err) {
     console.error('Login Error:', err);
     messageDiv.style.color = 'red';
-    messageDiv.textContent = 'Server error. Try again later.';
+    messageDiv.textContent = 'Server error. Please try again later.';
   }
 });
