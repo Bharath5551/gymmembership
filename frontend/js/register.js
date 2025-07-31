@@ -19,7 +19,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     if (response.ok) {
       
       // Optionally redirect:
-      window.location.href = '../login.html';
+      window.location.href = 'login.html';
     } else {
       alert(`❌ Error: ${data.message || 'Something went wrong'}`);
     }
