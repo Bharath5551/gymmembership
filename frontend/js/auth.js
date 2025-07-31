@@ -1,30 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("loginForm");
+document.getElementById('loginForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // STOP the form from refreshing
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const errorMessage = document.getElementById('error-message');
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+  try {
+    const response = await fetch('https://gymmembership-1n9g.onrender.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
 
-    try {
-      const response = await fetch('https://gymmembership-1n9g.onrender.com/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
+    const data = await response.json();
 
-      const data = await response.json();
-
-      if (response.ok) {
-        alert("Login successful!");
-        window.location.href = "home.html"; // ✅ go to homepage
-      } else {
-        alert(data.message || "Login failed");
-      }
-    } catch (err) {
-      console.error("Login error:", err);
-      alert("Something went wrong");
+    if (response.ok && data.success) {
+      window.location.href = 'index.html'; // Or your actual homepage
+    } else {
+      errorMessage.textContent = data.message || "Invalid user ID or password.";
     }
-  });
+  } catch (err) {
+    errorMessage.textContent = "Something went wrong. Please try again.";
+    console.error(err);
+  }
 });
