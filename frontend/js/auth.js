@@ -21,7 +21,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
       setTimeout(() => {
         window.location.href = 'home.html';
-      }, 1000);
+      }, 100);
     } else {
       messageDiv.style.color = 'red';
       messageDiv.textContent = data.message || "Login failed";
