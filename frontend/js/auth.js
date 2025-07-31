@@ -23,12 +23,12 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         window.location.href = 'home.html';
       }, 1000);
     } else {
-      messageDiv.style.color = 'red';
+      messageDiv.style.color = 'black';
       messageDiv.textContent = data.message || "Login failed";
     }
   } catch (err) {
     console.error('Login Error:', err);
-    messageDiv.style.color = 'red';
-    messageDiv.textContent = 'Server error. Please try again later.';
+    messageDiv.style.color = 'black';
+    messageDiv.textContent = 'Something Went Wrong. Please try again later.';
   }
 });
