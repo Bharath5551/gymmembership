@@ -15,7 +15,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     const data = await response.json();
 
     if (response.ok) {
-      messageDiv.style.color = 'green';
+      messageDiv.style.color = 'red';
       messageDiv.textContent = "Login successful! Redirecting...";
       localStorage.setItem('token', data.token);
 
@@ -23,12 +23,12 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         window.location.href = 'home.html';
       }, 1000);
     } else {
-      messageDiv.style.color = 'black';
+      messageDiv.style.color = 'red';
       messageDiv.textContent = data.message || "Login failed";
     }
   } catch (err) {
     console.error('Login Error:', err);
-    messageDiv.style.color = 'black';
+    messageDiv.style.color = 'red';
     messageDiv.textContent = 'Something Went Wrong. Please try again later.';
   }
 });
