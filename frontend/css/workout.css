@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.workout-container {
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+select, button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background-color: #e60023;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.plan {
+  margin-top: 20px;
+}
+
+.plan h3 {
+  margin-top: 20px;
+  color: #e60023;
+}
+
+.plan ul {
+  list-style: disc;
+  padding-left: 20px;
+}
