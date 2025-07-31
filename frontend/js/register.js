@@ -18,7 +18,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     const data = await response.json();
 
     if (response.ok) {
-      messageDiv.style.color = 'green';
+      messageDiv.style.color = 'red';
       messageDiv.textContent = "Registered successfully! Login Back";
       setTimeout(() => {
         window.location.href = 'index.html';
