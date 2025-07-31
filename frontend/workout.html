@@ -2,26 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Workout Plan | PowerZone</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Workout Plan</title>
+  <link rel="stylesheet" href="css/workout.css" />
 </head>
 <body>
-  <header>
-    <h1>PowerZone Gym</h1>
-    <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="diet.html">Diet Plan</a>
-      <a href="profile.html">Profile</a>
-      <a href="login.html">Logout</a>
-    </nav>
-  </header>
+  <div class="workout-container">
+    <h2>Select Your Fitness Level</h2>
+    <select id="level">
+      <option value="">-- Select Level --</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
 
-  <main>
-    <h2>Weekly Workout Plan</h2>
-    <div id="workout-list">
-      <!-- Fetched workout plans appear here -->
-    </div>
-  </main>
+    <button onclick="generateWorkout()">Generate Workout Split</button>
+
+    <div id="workout-plan" class="plan"></div>
+  </div>
 
   <script src="js/workout.js"></script>
 </body>
