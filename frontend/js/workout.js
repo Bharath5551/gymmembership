@@ -1,18 +1,18 @@
 const workouts = {
   beginner: {
-    Push: ['Push-ups', 'Overhead Dumbbell Press', 'Tricep Dips'],
-    Pull: ['Inverted Rows', 'Bicep Curls', 'Face Pulls'],
-    Legs: ['Bodyweight Squats', 'Lunges', 'Calf Raises']
+    Push: ['Bench Press','Dumbbell Shoulder Press','Incline Dumbbell Press','Lateral Raises','Tricep Dips (Bench)','Tricep Pushdowns'],
+    Pull: ['Lat Pulldown or Assisted Pull-ups','Seated Row','Dumbbell Rows','Face Pulls','Barbell or Dumbbell Curl','Hammer Curl'],
+    Legs: ['Bodyweight or Goblet Squats','Leg Press','Romanian Deadlifts','Walking Lunges','Standing Calf Raises','Seated Calf Raises']
   },
   intermediate: {
-    Push: ['Bench Press', 'Shoulder Press', 'Tricep Rope Pushdown'],
-    Pull: ['Pull-ups', 'Barbell Rows', 'Hammer Curls'],
-    Legs: ['Barbell Squats', 'Leg Press', 'Romanian Deadlift']
+    Push: ['Incline Bench Press','Barbell Bench Press','Pec Flys','Decline Bench Press', 'Dumbbell Shoulder Press','Lateral Raises','Cable Pushdown', 'Skull Crushers'],
+    Pull: ['Pull-ups','Barbell Rowing', 'Cable Pulldown', 'EZ Bar Curls','Hammer Curls','Shrugs','Reverse Pec flys'],
+    Legs: ['Smith Machine Squats', 'Leg Press', 'Hammer Curls']
   },
   advanced: {
-    Push: ['Incline Bench Press', 'Dumbbell Shoulder Press', 'Skull Crushers'],
-    Pull: ['Weighted Pull-ups', 'Deadlifts', 'EZ Bar Curls'],
-    Legs: ['Front Squats', 'Bulgarian Split Squats', 'Stiff-Leg Deadlifts']
+    Push: ['Incline Dumbbell Bench Press','Dumbbell Bench Press','Pec Flys','Bar Dips', 'Dumbbell Shoulder Press','Lateral Raises','Cable Pushdown', 'Overhead Cable Extentation'],
+    Pull: ['Weighted Pull-ups','Barbell Rowing', 'Deadlifts', 'EZ Bar Curls','Hammer Curls','Shrugs','Reverse Pec flys'],
+    Legs: ['Front Squats', 'Bulgarian Split Squats', 'Stiff-Leg Deadlifts','Calf Raises']
   }
 };
 
