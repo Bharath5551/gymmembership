@@ -3,6 +3,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
+  const messageDiv = document.getElementById('message');
 
   try {
     const response = await fetch('https://gymmembership-1n9g.onrender.com/api/auth/login', {
@@ -14,12 +15,21 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     const data = await response.json();
 
     if (response.ok) {
+      messageDiv.style.color = 'green';
+      messageDiv.textContent = "Login successful! Redirecting...";
+
       localStorage.setItem('token', data.token);
-      window.location.href = 'home.html';
+
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 100); // Delay for message to show
     } else {
-      alert(data.message || "Login failed");
+      messageDiv.style.color = 'red';
+      messageDiv.textContent = data.message || "Login failed";
     }
   } catch (err) {
-    alert('Server error');
+    console.error('Login Error:', err);
+    messageDiv.style.color = 'red';
+    messageDiv.textContent = 'Server error. Try again later.';
   }
 });
