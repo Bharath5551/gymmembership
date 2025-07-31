@@ -17,14 +17,19 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     const data = await response.json();
 
     if (response.ok) {
-      
-      // Optionally redirect:
-      window.location.href = 'index.html';
+      messageDiv.style.color = 'red';
+      messageDiv.textContent = "Registered successfully! Login Back";
+
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 100);
     } else {
-      alert(`❌ Error: ${data.message || 'Something went wrong'}`);
+      messageDiv.style.color = 'red';
+      messageDiv.textContent = "Something went wrong...!";
     }
   } catch (err) {
     console.error(err);
-    alert('❌ Failed to connect to server');
+    messageDiv.style.color = 'red';
+      messageDiv.textContent = "Failed Connecting server...!";
   }
 });
