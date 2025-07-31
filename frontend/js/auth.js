@@ -15,7 +15,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     const data = await response.json();
 
     if (response.ok && data.success) {
-      window.location.href = 'index.html'; // Or your actual homepage
+      window.location.href = 'home.html'; // Or your actual homepage
     } else {
       errorMessage.textContent = data.message || "Invalid user ID or password.";
     }
