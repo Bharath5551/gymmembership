@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   const password = document.getElementById('password').value.trim();
 
   try {
-    const response = await fetch('https://your-api-url.onrender.com/api/auth/login', {
+    const response = await fetch('https://gymmembership-1n9g.onrender.com/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
