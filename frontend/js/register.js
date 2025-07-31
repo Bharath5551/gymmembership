@@ -17,9 +17,9 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     const data = await response.json();
 
     if (response.ok) {
-      alert('✅ Registered successfully!');
+      
       // Optionally redirect:
-      window.location.href = '/login.html';
+      window.location.href = '../login.html';
     } else {
       alert(`❌ Error: ${data.message || 'Something went wrong'}`);
     }
