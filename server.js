@@ -37,10 +37,10 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));     // for login and register
-app.use('/api/workouts', require('./routes/workoutRoutes')); // for workout plans
-app.use('/api/diets', require('./routes/dietRoutes'));       // for diet plans
-// app.use('/api/users', require('./routes/userRoutes'));    // optional: for profile or admin control
+app.use('/api/auth', require('./routes/authRoutes'));         // login & register
+app.use('/api/workouts', require('./routes/workoutRoutes')); // workout plans
+app.use('/api/diets', require('./routes/dietRoutes'));       // diet plans
+// app.use('/api/users', require('./routes/userRoutes'));    // optional
 
 // Default route to test server
 app.get('/', (req, res) => {
