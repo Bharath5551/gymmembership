@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-// Register route
+const JWT_SECRET = process.env.JWT_SECRET || "secret123";
+
+// Register Route
 router.post('/register', async (req, res) => {
   try {
     const { fullname, email, password } = req.body;
@@ -21,28 +24,26 @@ router.post('/register', async (req, res) => {
 
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
-    console.error("❌ Error in /register:", error);
+    console.error("Register Error:", error);
     res.status(500).json({ message: "Server error" });
   }
 });
 
-// ✅ Login route
+// Login Route
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if (!email || !password) {
-      return res.status(400).json({ message: "Email and password are required" });
-    }
-
     const user = await User.findOne({ email });
     if (!user || user.password !== password) {
-      return res.status(401).json({ message: "Invalid credentials" });
+      return res.status(401).json({ message: "Invalid email or password" });
     }
 
-res.status(200).json({ success: true, message: "Login successful" });
+    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '2h' });
+
+    res.status(200).json({ token });
   } catch (error) {
-    console.error("❌ Error in /login:", error);
+    console.error("Login Error:", error);
     res.status(500).json({ message: "Server error" });
   }
 });
