@@ -14,37 +14,36 @@ body {
 
 header {
   background: #000;
-  padding: 20px 0;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .container {
-  width: 100%;
-  max-width: 1400px;
+  width: 90%;
+  max-width: 1200px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header h1 {
-  font-size: 24px;
-  color: white;
-}
-a {
-  pointer-events: auto;
-  z-index: 10;
-  position: relative;
-}
 .logo-link {
   text-decoration: none;
   color: white;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .logo-link:hover {
-  color: #e60023; /* Red on hover */
+  color: #e60023;
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -52,21 +51,14 @@ nav ul {
   display: flex;
   gap: 20px;
 }
-nav a {
-  pointer-events: auto;
-  z-index: 10;
-  position: relative;
-}
 
 .nav-link {
-  font-family: 'Segoe UI', sans-serif;
   font-weight: 600;
   font-size: 16px;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
   text-decoration: none;
-  background-color: transparent;
   transition: all 0.3s ease;
 }
 
@@ -74,76 +66,74 @@ nav a {
   background-color: #e60023;
   color: #fff;
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(230, 0, 35, 0.4);
 }
 
-.hero {
-  background: url('../images/gymimag.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.menu-toggle {
+  display: none;
+  font-size: 26px;
   color: white;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  background: url('../images/gymimag.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 0 0rem;
-}
-html {
-  scroll-behavior: smooth;
 }
 
-
-.hero::before {
-  content: "";
+.hero-overlay {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
+  position: relative;
   color: #fff;
-  text-align: top;
-  z-index: 0;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
 }
 
 .hero h2 {
-  font-size: 4rem;
-  margin-top: 0rem;
-  margin-bottom: 2rem;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 2.5rem;
-  margin-top: 0rem;
-  margin-bottom: 2rem;
-}
-.btn {
-  display: inline-block;
-  background-color: #e60023;   /* Stylish red */
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 10px 24px;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-.btn-buy:hover {
+.btn {
+  display: inline-block;
+  background-color: #e60023;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
   background-color: #c0001e;
   transform: scale(1.05);
 }
 
+/* Features */
 .features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background: #222;
-  padding: 40px 0;
+  padding: 40px 20px;
   gap: 20px;
 }
 
@@ -153,8 +143,11 @@ html {
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
+  min-width: 200px;
+  text-align: center;
 }
 
+/* Plans */
 .plans {
   background: #111;
   text-align: center;
@@ -171,15 +164,20 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 30px;
 }
 
 .card {
   background: #1e1e1e;
-  border: 2px solid #ff5e57;
+  border: 2px solid #e60023;
   border-radius: 10px;
   padding: 30px 40px;
   min-width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(230,0,35,0.4);
 }
 
 .card h3 {
@@ -189,4 +187,34 @@ html {
 
 .card p {
   font-size: 18px;
-}S
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: #000;
+    position: absolute;
+    top: 60px; right: 20px;
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
