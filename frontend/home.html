@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PowerZone Gym</title>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
@@ -9,20 +10,23 @@
   <header>
     <div class="container">
       <h1><a href="home.html" class="logo-link">PowerZone Gym</a></h1>
-          <nav>
-  		<ul>
-   		   <li><a href="home.html" class="nav-link">Home</a></li>
-                   <li><a href="diet.html" class="nav-link">Nutrition</a></li>
-                   <li><a href="workout.html" class="nav-link">Workout</a></li>
-  		</ul>
-	   </nav>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="home.html" class="nav-link">Home</a></li>
+          <li><a href="diet.html" class="nav-link">Nutrition</a></li>
+          <li><a href="workout.html" class="nav-link">Workout</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+      </nav>
     </div>
   </header>
 
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h2>Transform Your Body, Transform Your Life</h2>
       <p>Join PowerZone today and unlock your fitness potential</p>
+      <a href="https://wa.me/9113954626" class="btn">Join Now</a>
     </div>
   </section>
 
@@ -41,7 +45,7 @@
         <p>₹800 / month</p>
       </div>
       <div class="card">
-        <h3>Quarterly</h3>
+        <h3>Half-Yearly</h3>
         <p>₹4200 / 6 months</p>
       </div>
       <div class="card">
@@ -49,14 +53,22 @@
         <p>₹8,500 / year</p>
       </div>
     </div>
-    <a href="https://wa.me/9113954626" class="btn">Join Now</a>
   </section>
-	<script>
-  const token = localStorage.getItem('token');
-  if (!token) {
-    window.location.href = 'index.html';
-  }
-</script>
 
+  <script>
+    // Protect page
+    const token = localStorage.getItem('token');
+    if (!token) {
+      window.location.href = 'index.html';
+    }
+
+    // Mobile menu toggle
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
